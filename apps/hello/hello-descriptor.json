@@ -1,0 +1,29 @@
+{
+  "baseUrl": "${host}",
+  "key": "helloApp",
+  "lifecycle": {
+    "installed": "/lifecycle/installed",
+    "uninstalled": "/lifecycle/uninstalled"
+  },
+  "modules": {
+    "chat:bot": [
+      {
+        "key": "hello-bot",
+        "mention": {
+          "url": "/webhooks/mention"
+        },
+        "directMessage": {
+          "url": "/webhooks/mention"
+        }
+      }
+    ],
+    "chat:bot:messages": [
+      {
+        "key": "hello-ping",
+        "pattern": ".*hello.*",
+        "url": "/webhooks/message"
+      }
+    ]
+  }
+}
+
